@@ -7,4 +7,5 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('pre_open_door', views.pre_opendoor, name='pre_open_door'),
     path('open_door/', views.opdoor, name='open_door'),
+    path('close_door/', views.cldoor, name='close_door'),
 ]

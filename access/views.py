@@ -69,7 +69,6 @@ def pre_opendoor(request):
                 status = get_status()
             else:
                 context['error_msg'] = '无权限'
-
         elif user.is_cleaner:
             # 清洁人员
             if judg_c_time():
@@ -82,6 +81,12 @@ def pre_opendoor(request):
 
 def opdoor(request):
     res = post_cmd(1)
+
     context = res
     return HttpResponse('%s' % context)
 
+
+def cldoor(request):
+    res = post_cmd(0)
+    context = res
+    return HttpResponse('%s' % context)

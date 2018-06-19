@@ -59,9 +59,15 @@
                     {{ error_msg }}
                 </div>
             {% else %}
-                <button type="submit" class="submit">
-                    <a href="{% url 'open_door' %}">开门</a>
-                </button>
+                {% if status == off %}
+                    <button type="submit" class="submit">
+                        <a href="{% url 'open_door' %}">开门</a>
+                    </button>
+                {% else %}
+                    <button type="submit" class="submit">
+                        <a href="{% url 'close_door' %}">关门</a>
+                    </button>
+                {% endif %}
             {% endif %}
             <br>
             <br>
