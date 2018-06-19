@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        .register {
+		    box-sizing: border-box;
+		    width: 420px;
+		    margin: 50px auto 0;
+		    padding: 40px 60px 50px;
+		    box-shadow: 2px 2px 5px #ddd,-2px -2px 5px #ddd;
+		  }
+		  .register h2 {
+		    margin: 0;
+		    padding-bottom: 20px;
+		    line-height: 30px;
+		    border-bottom: 1px solid #000;
+		    text-align: center;
+		  }
+		  .register form {
+		    text-align: left;
+		    margin-bottom: 35px;
+		  }
+		  .register input {
+		    width: 100%;
+		    line-height: 33px;
+		    margin-top: 22px;
+		  }
+		  .register .submit {
+		  	border: none;
+		  	border-radius: 10px;
+		    width: 100%;
+		    padding: 10px 0;
+		    color: #fff;
+		    font-size: 20px;
+		    background-color: #3B9DFF;
+		  }
+		  h1 {
+		    margin-top: 40px;
+		  }
+	      input {
+	        width: 300px;
+	        border: 1px solid #aaa;
+	        border-radius: 5px;
+	        padding: 10px 0;
+	        text-indent: 20px;
+	        margin-top: 40px;
+	      }
+        </style>
+    </head>
+
+{% block content %}
+    <div class="register">
+        <h1>用户注册</h1>
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            {{ user_reg_form.as_p }}
+            <button type="submit" class="submit" >注册</button>
+        </form>
+{% endblock %}
+
+

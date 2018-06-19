@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+          .personal {
+		    box-sizing: border-box;
+		    width: 420px;
+		    margin: 50px auto 0;
+		    padding: 40px 60px 50px;
+		    box-shadow: 2px 2px 5px #ddd,-2px -2px 5px #ddd;
+		  }
+		  .personal p {
+		  	height: 30px;
+		  	line-height: 30px;
+		  	font-size: 18px;
+		  	text-align: center;
+		  }
+		  .personal h2 {
+		    margin: 0;
+		    padding-bottom: 20px;
+		    line-height: 30px;
+		    border-bottom: 1px solid #000;
+		    text-align: center;
+		  }
+		  .personal form {
+		    text-align: left;
+		    margin-bottom: 35px;
+		  }
+		  .personal input {
+		    width: 100%;
+		    line-height: 33px;
+		    margin-top: 22px;
+		    border: 1px solid #aaa;
+		    border-radius: 5px;
+		    padding: 15px 0;
+		    text-indent: 10px;
+		  }
+          .personal .msg {
+              text-align: center;
+		  }
+		  .personal .submit {
+		  	border: none;
+		  	border-radius: 10px;
+		    width: 100%;
+		    padding: 10px 0;
+		    color: #fff;
+		    font-size: 20px;
+		    background-color: #3B9DFF;
+		  }
+        </style>
+    </head>
+    <body>
+    	<div class="personal">
+    		<h2>智能门禁系统</h2>
+    		<p>门禁状态为: {{ status }}</p>
+            {% if error_msg %}
+                <div class="msg">
+                    {{ error_msg }}
+                </div>
+            {% else %}
+                <button type="submit" class="submit">
+                    <a href="{% url 'open_door' %}">开门</a>
+                </button>
+            {% endif %}
+            <br>
+            <br>
+            <button type="submit" class="submit">
+                <a href="{% url 'logout' %}">注销</a>
+            </button>
+  		</div>
+    </body>
+</html>
+

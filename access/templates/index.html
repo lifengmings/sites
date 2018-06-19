@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .swap {
+            position:relative;
+            overflow: hidden;
+            border: 1px solid #aaa;
+            border-radius: 20px;
+            width: 500px;
+            height: 500px;
+            margin: 5% auto 0;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 40px;
+        }
+        .open-door{
+            width: 200px;
+            margin-left: -100px;
+            border: none;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 50px;
+            padding: 10px 20px;
+            font-size: 24px;
+            color: #fff;
+            font-family: Microsoft Yahei;
+            background-color: #3A96FF;
+            cursor:pointer;
+        }
+        .open-door:hover{
+            text-decoration: none;
+            color: #fff;
+        }
+        input {
+            width: 300px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 15px 20px;
+            margin-top: 40px;
+        }
+        .register-now {
+		    color: red;
+		  }
+    </style>
+</head>
+
+<body>
+    <div class="swap">
+        <h1>智能门禁系统</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ authform.as_p }}
+            <a href="{% url 'register' %}" class="register-now">立即注册</a>
+            <button type="submit" class="open-door">登陆</button>
+        </form>
+    </div>
+</body>
